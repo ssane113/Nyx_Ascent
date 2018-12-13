@@ -120,8 +120,6 @@ int main(int argc, char *argv[])
   double spacing_y = (ymax-ymin)/(dims[1]-1);
   double spacing_z = (zmax-zmin)/(dims[2]-1);
 
-  cout << "Spacing : " << spacing_x << endl;
-
   int npts = dims[0]*dims[1]*dims[2];
 
   float *x_vec = (float*)malloc(sizeof(float)*npts);
@@ -156,7 +154,7 @@ int main(int argc, char *argv[])
     GetVTKTime(input_path, filename, rdr, ds, cycle+1, &time_next); 
     time_step_diff = time_next - time_current;
 
-    cout << "Setting set size to " << time_step_diff << endl;
+    cout << "Setting step size to " << time_step_diff << endl;
     
     Conduit:Node mesh_data;
     // TODO Populate mesh_data;
